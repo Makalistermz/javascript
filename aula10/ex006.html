@@ -17,30 +17,34 @@
     </style>
 </head>
 <body>
-    <div id="area">
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">  <!--  posso fazer assim onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()" ou assim os eventos a.addEventlistener('click', clicar)
+    a.addEventlistener('mouseenter', entrar)
+    a.addEventlistener('mouseout', sair), assim fica menos poluido o html -->
         Interaja...
     </div>
 
     <script>
-        var a = window.document.getElementById('area')
-        a.addEventListener('click', clicar)
-        a.addEventListener('mouseenter', entrar)
-        a.addEventListener('mouseout', sair)
+    a.addEventlistener('click', clicar)
+    a.addEventlistener('mouseenter', entrar)
+    a.addEventlistener('mouseout', sair)
 
-        function clicar() {
-            a.innerText = 'Clicou!'
-            a.style.backgroundColor = 'Red'
-        }
+            function clicar() {
+                var a = document.getElementById('area')
+                a.innerText = 'Clicou!'
+                a.style.backgroundColor = 'red'
+            }
 
-        function entrar() {
-            a.innerText = 'Entrou!'
-        }
+            function entrar() {
+                var a = document.getElementById('area')
+                a.innerText = 'Entrou!'
+                a.style.backgroundColor = 'green'
+            }
 
-        function sair() {
-            a.innerText = 'Saiu!'
-            a.style.backgroundColor = 'Green'
-        }
-
+            function sair() {
+                var a = document.getElementById('area')
+                a.innerText = 'Saiu!'
+                a.style.backgroundColor = 'green'
+            }
     </script>
 </body>
 </html>
