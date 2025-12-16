@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Notas do aluno</h1>
+
+    <p>Qual a cidade do aluno? <input type="text" name="cidade" id="cidade" placeholder="Cidade"></p>
+    <p>Notas do aluno: <input type="number" name="notas" id="notas" placeholder="Notas"></p>
+    <p>Total de faltas do aluno: <input type="number" name="faltas" id="faltas" placeholder="Faltas"></p>
+
+    <input type="button" value="Enviar" onclick="enviar()">
+
+
+    <p id="res"></p>
+
+    <script>
+        function enviar() {
+            var no = document.getElementById('notas')
+            var c = document.getElementById('cidade')
+            var r = document.getElementById('res')
+            var fa = document.getElementById('faltas')
+            var n = Number(no.value)
+            var f = Number(fa.value)
+
+            r.innerHTML = `<p>A cidade do aluno é ${c.value}</p>`
+            r.innerHTML += `<p>A nota do aluno foi ${n}</p>`
+            r.innerHTML += `<p>O total de faltas do aluno foi de ${f}</p>`
+
+            if (n >= 6 && f <= 300) {
+                r.innerHTML += `<p><strong>Aprovado</strong></p>`
+            } else {
+                r.innerHTML += `<p><strong>Reprovado</strong></p>`
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
