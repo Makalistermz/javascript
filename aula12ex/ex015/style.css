@@ -19,6 +19,7 @@ section {
     height: 600px;
     background-color: white;
     margin: 0 auto;
+    padding: 20px;
     border-radius: 20px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.534);
 }
@@ -27,6 +28,9 @@ section {
     height: 250px;
     width: 250px;
     border-radius: 50%;
+    display: flex;
+    padding-top: 30px;
+    margin: auto;
 }
 
 footer {
