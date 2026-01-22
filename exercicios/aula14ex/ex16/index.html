@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contagem</h1>
+    </header>
+
+    <section>
+
+        <div id="um">
+            <label for="inicio">Início: </label>
+            <input type="number" name="inicio" id="inicio">
+        </div>
+
+        <div id="dois">
+            <label for="fim">Fim: </label>
+            <input type="number" name="fim" id="fim">
+        </div>
+
+        <div id="tres">
+            <label for="pulo">Pular de: </label>
+            <input type="number" name="pulo" id="pulo">
+        </div>
+
+        <input id="botao" type="submit" value="Contar" onclick="contar()">
+
+        <p id="res">Preparando contagem...</p>
+    </section>
+
+    <footer>
+        <p>&copy; Makalister Mutz Zager</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
