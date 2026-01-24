@@ -4,21 +4,18 @@ function contar() {
     let pu = document.getElementById('pulo');
     const res = document.getElementById('res')
 
-    let inicio = Number(ini.value);
-    let fi = Number(fim.value);
-    let pulo = Number(pu.value);
+    if (ini.value.length == 0 || fim.value.length == 0 || pu.value.length == 0 ) {
+        window.alert(`[ERRO] Faltam dados!`)
+    } else {
+        res.innerHTML = 'Contando: <br>';
+        let inicio = Number(ini.value);
+        let fi = Number(fim.value);
+        let pulo = Number(pu.value);
 
-    if (pulo <= 0) {
-        window.alert(`[ERRO] Passo inválido. O passo deve ser maior que 0.`)
-    }
-
-    res.innerHTML = 'Contando:<br>';
-
-    if (inicio < fi) {
-        for (var n = inicio; n <= fi; n += pulo) {
-            res.innerHTML += `${n} 👉 `;
+        for (let n = inicio; n <= fi; n += pulo) {
+            res.innerHTML += ` ${n} \u{1F449}`;
         }
+        res.innerHTML += `\u{1F3C1}`
     }
-
 }
 
