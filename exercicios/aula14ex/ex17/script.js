@@ -1,5 +1,3 @@
-const { createElement } = require("react");
-
 function gerar() {
     let num = document.getElementById('numero');
     let tabu = document.getElementById('tabuada');
