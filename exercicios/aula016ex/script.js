@@ -15,6 +15,9 @@ function adicionar() {
         window.alert('Valor Não definido ou Já existe este valor');
     }
 
+    num.value = ''
+    num.focus() //vai continuar escrevendo
+
 }
 
 function finalizar() {
@@ -28,10 +31,19 @@ function finalizar() {
 
     let maior = Math.max(...valores)
     let menor = Math.min(...valores)
+    let soma = 0
+    let media = 0
 
+    for (let pos in valores) {
+        soma += valores[pos]
+    }
+
+    media = soma / valores.length
     res.innerHTML = `
     Ao todo temos ${tabu.length} números cadastrados.<br>
     O maior valor cadastrado foi ${maior}. <br>
     O menor valor cadastrado foi ${menor}. <br>
+    Somando todos os valores, temos ${soma}. <br>
+    Média dos valores digitados é ${media}. <br>
     `;
 }
