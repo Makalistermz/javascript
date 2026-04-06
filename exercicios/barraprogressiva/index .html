@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Progressiva</title>
+    <style>
+        @keyframes crescer {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .ativa {
+            animation: crescer 3s forwards;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barra progressiva</h1>
+
+    <div class="conatiner-ativa">
+        <div class="ativa"></div>
+    </div>
+
+    <button onclick="ativar()">Avançar</button>
+</body>
+</html>
