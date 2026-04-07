@@ -15,9 +15,64 @@
             }
         }
 
+        @keyframes bordaanimada {
+            0% {
+                border-color: purple;
+                border-left-width: 0px;
+                border-right-width: 0px;
+            }
+            50% {
+                border-color: #9a2cf3;
+                border-left-width: 4px;
+                border-right-width: 4px;
+            }
+            100% {
+                border-color: rgb(114, 43, 180);
+                border-left-width: 8px;
+                border-right-width: 8px;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .conatiner-ativa {
+            width: 100%;
+            height: 50px;
+            margin: 20px 0px;
+            border: 2px solid black;
+            border-radius: 30px;
+        }
+
         .ativa {
             animation: crescer 3s forwards;
         }
+
+        .container-btn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            width: 350px;
+            height:50px;
+            background-color:  #9a2cf3;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.3em;
+            cursor: pointer;
+            color: white;
+
+            animation: bordaanimada 4s ease-in-out infinite alternate;
+        }
+
+        .btn:hover {
+            box-shadow: 0px 0px 10px 3px rgba(137, 0, 196, 0.671);
+        }
+
     </style>
 </head>
 <body>
@@ -27,6 +82,8 @@
         <div class="ativa"></div>
     </div>
 
-    <button onclick="ativar()">Avançar</button>
+    <div class="container-btn">
+        <button onclick="ativar()" class="btn">Avançar</button>
+    </div>
 </body>
 </html>
