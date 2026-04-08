@@ -50,14 +50,23 @@
             position: relative;
             width: 350px;
             height:50px;
-            background-color:  #9a2cf3;
-            border: 2px solid purple;
+            background-color: transparent;
+            border: transparent;
             border-radius: 20px;
             font-size: 1.3em;
             cursor: pointer;
             color: white;
             overflow: hidden;
             z-index: 0;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            inset: 5px; /* distância da borda giratória pro fundo */
+            background-color: #9a2cf3;
+            border-radius: 18px;
+            z-index: -1;
         }
 
         .btn::before {
@@ -67,9 +76,9 @@
             height: 200%;
             top: -50%;
             left: -50%;
-            background: conic-gradient(#9a2cf3, transparent, #9a2cf3);
+            background: conic-gradient(blue, rgb(87, 0, 128));
             animation: girar 2s linear infinite;
-            z-index: -1;
+            z-index: -2;
         }
 
         .btn:hover {
