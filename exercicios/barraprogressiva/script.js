@@ -1,8 +1,9 @@
-let containerbarra = document.querySelector('.conatiner-ativa');
-let ativa = document.querySelector('.ativa');
+let containerbarra = document.querySelector('.container-ativa');
 
 function ativar() {
-    ativa.addEventListener('animationend', function() {
-        
+    const barra = document.getElementById('barra');
+    barra.classList.add('ativa');
+
+    barra.addEventListener('animationend', function() {
     })
 }

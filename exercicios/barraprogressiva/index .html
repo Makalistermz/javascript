@@ -15,22 +15,9 @@
             }
         }
 
-        @keyframes bordaanimada {
-            0% {
-                border-color: purple;
-                border-left-width: 0px;
-                border-right-width: 0px;
-            }
-            50% {
-                border-color: #9a2cf3;
-                border-left-width: 4px;
-                border-right-width: 4px;
-            }
-            100% {
-                border-color: rgb(114, 43, 180);
-                border-left-width: 8px;
-                border-right-width: 8px;
-            }
+        @keyframes girar {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
         }
 
         h1 {
@@ -39,7 +26,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        .conatiner-ativa {
+        .container-ativa {
             width: 100%;
             height: 50px;
             margin: 20px 0px;
@@ -48,6 +35,9 @@
         }
 
         .ativa {
+            height: 100%;
+            background-color: #9a2cf3;
+            border-radius: 30px;
             animation: crescer 3s forwards;
         }
 
@@ -57,20 +47,38 @@
         }
 
         .btn {
+            position: relative;
             width: 350px;
             height:50px;
             background-color:  #9a2cf3;
-            border: none;
+            border: 2px solid purple;
             border-radius: 20px;
             font-size: 1.3em;
             cursor: pointer;
             color: white;
+            overflow: hidden;
+            z-index: 0;
+        }
 
-            animation: bordaanimada 4s ease-in-out infinite alternate;
+        .btn::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: conic-gradient(#9a2cf3, transparent, #9a2cf3);
+            animation: girar 2s linear infinite;
+            z-index: -1;
         }
 
         .btn:hover {
             box-shadow: 0px 0px 10px 3px rgba(137, 0, 196, 0.671);
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
         }
 
     </style>
@@ -78,12 +86,14 @@
 <body>
     <h1>Barra progressiva</h1>
 
-    <div class="conatiner-ativa">
-        <div class="ativa"></div>
+    <div class="container-ativa">
+        <div id="barra"></div>
     </div>
 
     <div class="container-btn">
-        <button onclick="ativar()" class="btn">Avançar</button>
+        <button onclick="ativar()" class="btn"><span>Avançar</span></button>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
